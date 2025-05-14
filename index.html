@@ -1,159 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Resume</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grigory Gusev — Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
-    .header-info p {
-      line-height: 1.6;
-      font-family: 'Open Sans', sans-serif;
-    }
-    .section-title {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 4px;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-    }
-    .list-disc li {
-      line-height: 1.6;
-    }
-    .button {
-      background-color: #4C8BF5;
-      color: white;
-      font-size: 1rem;
-      padding: 12px 20px;
-      border-radius: 5px;
-      font-weight: 600;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .button:hover {
-      background-color: #3a6ecf;
+
+    ul.list-disc {
+      list-style-position: inside;
     }
   </style>
 </head>
-<body class="bg-gray-50 font-sans">
 
-  <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8" id="resume-content">
-    <!-- Header Section -->
-    <header class="text-center mb-6">
-      <h1 class="text-3xl font-bold text-gray-800">Gusev Grigory</h1>
-      <p class="text-lg text-gray-600">Backend Developer</p>
-      <div class="header-info text-gray-500">
-        <p>Email: <a href="mailto:gusevgrigorijem1@gmail.com" class="text-blue-500">gusevgrigorijem1@gmail.com</a> | Phone: <a href="tel:+79176171196" class="text-blue-500">(917) 617-1196</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/gusev-grigory-3a5163254" class="text-blue-500">www.linkedin.com/in/gusev-grigory-3a5163254</a> | GitHub: <a href="https://github.com/gusevgrishaem1" class="text-blue-500">github.com/gusevgrishaem1</a></p>
+<body class="bg-gray-100 text-gray-800">
+  <main id="resume-content" class="max-w-3xl mx-auto bg-white shadow-sm mt-10 p-6 rounded-xl">
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-bold">Grigory Gusev</h1>
+      <p class="text-gray-600 text-lg">Backend Developer</p>
+      <div class="mt-2 text-sm text-gray-500 space-y-1">
+        <p>Email: <a href="mailto:gusevgrigorijem1@gmail.com" class="text-blue-500">gusevgrigorijem1@gmail.com</a> |
+          Phone: <a href="tel:+79176171196" class="text-blue-500">+7 (917) 617-1196</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/gusev-grigory-3a5163254"
+            class="text-blue-500">/in/gusev-grigory</a> | GitHub: <a href="https://github.com/gusevgrishaem1"
+            class="text-blue-500">gusevgrishaem1</a></p>
       </div>
     </header>
 
-    <!-- About Me Section -->
     <section class="mb-6">
-      <h2 class="text-2xl font-semibold text-gray-800 section-title">About Me</h2>
-      <p class="text-gray-600 mt-2">
-        My name is Grigory, and I am a software developer with a strong passion for creating solutions for both businesses and users.
-        My love for programming began during my university years, and since then, 
-        I have been actively exploring various areas of development, including web development, game development, and other fields.
+      <h2 class="text-xl font-semibold border-b pb-1">About Me</h2>
+      <p class="mt-2 text-gray-700 text-sm leading-relaxed">
+        I'm a backend developer with a passion for building scalable and efficient systems.
+        Experienced in Go, Java, and Python, I enjoy solving real-world problems and creating products that matter.
       </p>
     </section>
 
-    <!-- Education Section -->
     <section class="mb-6">
-      <h2 class="text-2xl font-semibold text-gray-800 section-title">Education</h2>
-      <ul class="list-disc ml-6">
-        <li>
-          <span class="font-semibold">Bachelor's in Computer Science</span> - Samara University, Samara, 2022
-        </li>
-      </ul>
+      <h2 class="text-xl font-semibold border-b pb-1">Education</h2>
+      <p class="mt-2 text-sm text-gray-700">Bachelor's in Computer Science – Samara University, 2022</p>
     </section>
 
-    <!-- Work Experience Section -->
     <section class="mb-6">
-      <h2 class="text-2xl font-semibold text-gray-800 section-title">Work Experience</h2>
-      <ul class="space-y-4">
-        <li>
-            <h3 class="font-semibold text-gray-700">GO Developer (GO, Clickhouse, Nats)</h3>
-            <p class="text-gray-600">Wildberries - Remote | 2024 - now </p>
-            <p class="text-gray-600">Contact info: www.wildberries.ru</p>
-            <ul class="list-disc ml-6 mt-2 text-gray-600">
-              <li>Added numerous unit tests and significantly reduced bugs after updating the production environment.</li>
-              <li>Optimized algs and reduced the execution time for business process.</li>
-              <li>Increased user purchase conversion by adding a search feature.</li>
-            </ul>
-          </li>
-        <li>
-          <h3 class="font-semibold text-gray-700">Java Developer (Java, Spring, PostgreSQL, Kafka)</h3>
-          <p class="text-gray-600">IT-Services - Samara | 2023 - 2024 </p>
-          <p class="text-gray-600">Contact info: serviceit.su</p>
-          <ul class="list-disc ml-6 mt-2 text-gray-600">
-            <li>Developed and implemented a module for generating user's reports using Java, JasperSoft and SQL.</li>
-            <li>Optimized SQL queries by using query plan.</li>
-            <li>Added numerous unit tests and significantly reduced bugs after updating the production environment.</li>
+      <h2 class="text-xl font-semibold border-b pb-1">Work Experience</h2>
+      <div class="space-y-4 mt-2 text-sm text-gray-700">
+        <div>
+          <p class="font-semibold text-gray-800">GO Developer – Wildberries (Remote) | 2024 – now</p>
+          <ul class="list-none">
+            <li>• Wrote unit tests and decreased post-deployment bugs significantly.</li>
+            <li>• Optimized algorithms to improve business performance.</li>
+            <li>• Increased user conversion via search features.</li>
           </ul>
-        </li>
-        <li>
-          <h3 class="font-semibold text-gray-700">Full Stack Developer (JavaScript, Python, Java, PostgreSQL)</h3>
-          <p class="text-gray-600">Open Code - Samara | 2022 - 2023 </p>
-          <p class="text-gray-600">Contact info: www.o-code.ru</p>
-          <ul class="list-disc ml-6 mt-2 text-gray-600">
-            <li>Developed and implemented a module for storing user files using Java (Spring Boot) for the backend and JavaScript (ExtJS) for the frontend.</li>
-            <li>Optimized the calculation process, which significantly reduced the execution time.</li>
-            <li>Developed Python scripts that is useful for managing daily routine tasks.</li>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-800">Java Developer – IT-Services | 2023 – 2024</p>
+          <ul class="list-none">
+            <li>• Built reporting modules with JasperSoft and SQL.</li>
+            <li>• Improved performance via optimized queries.</li>
+            <li>• Decreased bug count through thorough unit testing.</li>
           </ul>
-        </li>
-      </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-800">Full Stack Developer – Open Code | 2022 – 2023</p>
+          <ul class="list-none">
+            <li>• Implemented file storage modules using Spring Boot and ExtJS.</li>
+            <li>• Reduced runtime of critical operations.</li>
+            <li>• Created Python tools for automation of daily tasks.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
     <section class="mb-6">
-      <h2 class="text-2xl font-semibold text-gray-800 section-title">Skills</h2>
-      <ul class="grid grid-cols-2 gap-4 mt-2 text-gray-600">
-        <li>GO</li>
+      <h2 class="text-xl font-semibold border-b pb-1">Skills</h2>
+      <ul class="grid grid-cols-2 gap-2 mt-2 text-sm text-gray-700">
+        <li>Go</li>
         <li>Python</li>
         <li>Java</li>
         <li>JavaScript</li>
-        <li>HTML & CSS</li>
         <li>SQL</li>
+        <li>HTML & CSS</li>
       </ul>
     </section>
+  </main>
 
-    <!-- Button to download PDF -->
-
-  </div>
-
-  <div class="text-center mt-4 mb-2">
-    <button onclick="downloadPDF()" class="button">Download as PDF</button>
+  <div class="text-center my-6">
+    <button onclick="downloadPDF()"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-semibold transition">Download as
+      PDF</button>
   </div>
 
   <script>
     function downloadPDF() {
       const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-  
-      // Capture the HTML content with html2canvas
       html2canvas(document.getElementById("resume-content"), {
-        useCORS: true, // Разрешает кросс-доменные запросы для изображений
-        logging: true, // Включаем логирование для дебага
-        onrendered: function(canvas) {
-          // After rendering the canvas, create the PDF
-          const imgData = canvas.toDataURL("image/png");
-          doc.addImage(imgData, 'PNG', 10, 10, 190, 220);
-          doc.save("resume.pdf");
-        },
-      })
+        useCORS: true,
+        scale: 2, // увеличиваем в 2 раза плотность пикселей
+      }).then(canvas => {
+        const imgData = canvas.toDataURL("image/png");
+
+        const pdf = new jsPDF("p", "mm", "a4");
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+
+        // Получаем соотношение размеров
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+        const ratio = Math.min(pageWidth / imgWidth, pageHeight / imgHeight);
+
+        const imgScaledWidth = imgWidth * ratio;
+        const imgScaledHeight = imgHeight * ratio;
+
+        // Центрируем изображение
+        const marginX = (pageWidth - imgScaledWidth) / 2;
+        const marginY = (pageHeight - imgScaledHeight) / 2;
+
+        pdf.addImage(imgData, "PNG", marginX, marginY, imgScaledWidth, imgScaledHeight);
+        pdf.save("resume.pdf");
+      });
     }
   </script>
-
 </body>
+
 </html>
